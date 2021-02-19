@@ -1,20 +1,3 @@
-# -----------------------------------------------------------------------------
-#
-# Stack Tower
-# Language - Python
-# Modules - pygame, sys, random
-#
-# Controls - Mouse Click
-#
-# By - Jatin Kumar Mandav
-#
-# Website - https://jatinmandav.wordpress.com
-#
-# YouTube Channel - https://www.youtube.com/channel/UCdpf6Lz3V357cIZomPwjuFQ
-# Twitter - @jatinmandav
-#
-# -----------------------------------------------------------------------------
-
 import pygame
 import sys
 import random

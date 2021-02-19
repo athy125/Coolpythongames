@@ -1,15 +1,3 @@
-# -----------------------------------------------------------------------------
-#
-# Chain Reaction
-# Language - Python
-# Modules - pygame, sys, math
-#
-# Controls - Mouse Click
-#
-# By - AJ
-#
-#
-# -----------------------------------------------------------------------------
 import pygame
 import sys
 from math import *

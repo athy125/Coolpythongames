@@ -1,15 +1,3 @@
-# -----------------------------------------------------------------------------
-#
-# Space Invaders
-# Language - Python
-# Modules - pygame, sys, time
-#
-# Controls - Left and Right Keys to Move, Space to shoot
-#
-# By - AJ
-#
-# -----------------------------------------------------------------------------
-
 import pygame
 import sys
 import time
@@ -47,7 +35,7 @@ class SpaceShip:
         self.colour = colour
 
     def draw(self):
-        pygame.draw.rect(display, yellow, (self.x + self.w/2 - 8, self.y - 10, 16, 10))
+        pygame.draw.rect(display, yellow, (self.x + self.w / 2 - 8, self.y - 10, 16, 10))
         pygame.draw.rect(display, self.colour, (self.x, self.y, self.w, self.h))
         pygame.draw.rect(display, dark_gray, (self.x + 5, self.y + 6, 10, self.h - 10))
         pygame.draw.rect(display, dark_gray, (self.x + self.w - 15, self.y + 6, 10, self.h - 10))
@@ -84,12 +72,12 @@ class Alien:
 
     def draw(self):
         pygame.draw.ellipse(display, green, (self.x, self.y, self.d, self.d))
-        pygame.draw.ellipse(display, dark_gray, (self.x + 10, self.y + self.d/3, 8, 8), 2)
-        pygame.draw.ellipse(display, dark_gray, (self.x + self.d - 20, self.y + self.d/3, 8, 8), 2)
-        pygame.draw.rect(display, dark_gray, (self.x, self.y+self.d-20, 50, 7))
+        pygame.draw.ellipse(display, dark_gray, (self.x + 10, self.y + self.d / 3, 8, 8), 2)
+        pygame.draw.ellipse(display, dark_gray, (self.x + self.d - 20, self.y + self.d / 3, 8, 8), 2)
+        pygame.draw.rect(display, dark_gray, (self.x, self.y + self.d - 20, 50, 7))
 
     def move(self):
-        self.x += self.x_dir*self.speed
+        self.x += self.x_dir * self.speed
 
     def shift_down(self):
         self.y += self.d
@@ -101,8 +89,8 @@ def saved():
     font_large = pygame.font.SysFont("Wide Latin", 43)
     text2 = font_large.render("Congratulations!", True, white1)
     text = font.render("You Prevented the Alien Invasion!", True, white1)
-    display.blit(text2, (60, height/2))
-    display.blit(text, (45, height/2 + 100))
+    display.blit(text2, (60, height / 2))
+    display.blit(text, (45, height / 2 + 100))
     pygame.display.update()
     time.sleep(3)
 
@@ -113,19 +101,19 @@ def GameOver():
     font_large = pygame.font.SysFont("Chiller", 100)
     text2 = font_large.render("Game Over!", True, white1)
     text = font.render("You Could not Prevent the Alien Invasion!", True, white1)
-    display.blit(text2, (180, height/2-50))
-    display.blit(text, (45, height/2 + 100))
+    display.blit(text2, (180, height / 2 - 50))
+    display.blit(text, (45, height / 2 + 100))
 
 
 # --------------------- The Game ------------------
 def game():
     invasion = False
-    ship = SpaceShip(width/2-ship_width/2, height-ship_height - 10, ship_width, ship_height, white)
+    ship = SpaceShip(width / 2 - ship_width / 2, height - ship_height - 10, ship_width, ship_height, white)
 
     bullets = []
     num_bullet = 0
     for i in range(num_bullet):
-        i = Bullet(width/2 - 5, height - ship_height - 20)
+        i = Bullet(width / 2 - 5, height - ship_height - 20)
         bullets.append(i)
 
     x_move = 0
@@ -134,7 +122,7 @@ def game():
     num_aliens = 8
     d = 50
     for i in range(num_aliens):
-        i = Alien((i+1)*d + i*20, d+20, d)
+        i = Alien((i + 1) * d + i * 20, d + 20, d)
         aliens.append(i)
 
     while not invasion:
@@ -156,7 +144,7 @@ def game():
 
                 if event.key == pygame.K_SPACE:
                     num_bullet += 1
-                    i = Bullet(ship.x + ship_width/2 - 5, ship.y)
+                    i = Bullet(ship.x + ship_width / 2 - 5, ship.y)
                     bullets.append(i)
 
             if event.type == pygame.KEYUP:
@@ -213,6 +201,7 @@ def game():
 
         pygame.display.update()
         clock.tick(60)
+
 
 # ----------------- Calling the Game Function ---------------------
 game()
